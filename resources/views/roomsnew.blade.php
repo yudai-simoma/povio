@@ -1,7 +1,7 @@
-<!-- 動画編集ページ -->
+<!-- ルーム作成ページ -->
 @extends('layouts.app')
 @section('content')
   <div class="">
-    動画編集ページ
+  ルーム作成ページ
   </div>
 @endsection
