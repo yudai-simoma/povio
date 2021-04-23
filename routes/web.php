@@ -10,7 +10,7 @@ Route::get('/','RoomsController@index');
 Route::get('/roomsnew','RoomsController@new');
 
 // // ルームの追加処理
-// Route::post('/books','BooksController@store');
+ Route::post('/books','BooksController@store');
 
 // ルームの詳細画面
 Route::get('/roomsshow','RoomsController@show');
@@ -19,10 +19,10 @@ Route::get('/roomsshow','RoomsController@show');
 Route::get('/roomsedit','RoomsController@edit');
 
 // // ルームの編集処理
-// Route::get('/roomsedit','RoomsController@edit');
+ Route::get('/roomsedit','RoomsController@edit');
 
 // //  ルームを削除 
-// Route::delete('/room/{room}','RoomsController@destroy');
+ Route::delete('/room/{room}','RoomsController@destroy');
 
 // // ルームへのアクセスページ
 // Route::get('/roomsedit','RoomsController@edit');
