@@ -50,3 +50,7 @@ Route::get('/videosedit','VideosController@edit');
 // ユーザー登録で記述
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
