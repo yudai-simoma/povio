@@ -27,6 +27,7 @@
 | name         | string     | null: false |
 | price        | integer    | null: false |
 | password     | string     | null: false |
+| supplement   | string     | null: false |
 
 ### Association
 
