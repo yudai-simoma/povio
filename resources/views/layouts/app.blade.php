@@ -33,12 +33,13 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
+                @if (session('message'))
+                    <div class="flash_message">
+                        {{ session('message') }}
+                    </div>
+                @endif
+
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
-                    </ul>
-
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->

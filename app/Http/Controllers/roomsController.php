@@ -54,7 +54,7 @@ class RoomsController extends Controller{
         $rooms->price =  $request->price;
         $rooms->password =    $request->password;
         $rooms->save(); 
-        return redirect('/')->with('message', '本登録が完了しました');
+        return redirect('/')->with('message', 'ルームを作成しました');
     }
 
     #showアクションを定義
@@ -70,5 +70,12 @@ class RoomsController extends Controller{
     #editアクションを定義
     public function edit() {
         return view('roomsedit');
+    }
+
+    // ルームの削除機能
+     //削除
+     public function destroy(Room $room) {
+        $room->delete();
+        return redirect('/')->with('message', 'ルームを削除しました');
     }
 }
