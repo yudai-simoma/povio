@@ -27,7 +27,12 @@ class RoomsController extends Controller{
 
     #showアクションを定義
     public function show() {
-        return view('roomsshow');
+        $rooms = Room::orderBy('created_at', 'asc')->get();
+        // $videos = Video::orderBy('created_at', 'asc')->get();
+        return view('roomsshow',[
+            'rooms' => $rooms
+            // 'videos' => $videos
+        ]);
     }
 
     #editアクションを定義

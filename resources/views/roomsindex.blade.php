@@ -63,6 +63,7 @@
               <tr class="room-money">
                 <td>
                     <div class="room-price">月額<br>{{ $room->price }}<br>円</div>
+                    <div class="room-price"><br>{{ "ユーザー名" }}<br></div>
                 </td>
               </tr>
 

@@ -240,6 +240,7 @@ small{
     display: block;
     margin: 0px auto 0px auto;
     color: #EEEEEE;
+    padding: 50px 0px 100px 0px;
 }
 
 
@@ -476,14 +477,137 @@ tbody{
     color: #000000;
     background: #808080;
 }
+.footer{
+    background-color: #000000;
+}
 /* トップページのcss終了 */
 
 
 
 
 /* ルーム作成ページのcss開始 */
+.user-video{
+    height: 188px;
+    width: 24vw;
+    object-fit: contain;
+}
+/* 動画一覧 */
+tbody{
+    width: 100%;
+    display: flex;
+    /* flex-wrap: wrap; */
+    /* justify-content: space-between; */
+    padding-right: 17px;
+}
+.video-header{
+    display: flex;
+    margin-bottom: 50px;
+}
+.videosindex{
+    font-size: 45px;
+    color: #FFFFFF;
+    font-weight: bolder;
+    letter-spacing: 0.2em;
+    margin-left: 30px;
+}
+.float3{
+    position: relative;
+    top: 45px;
+    left: 100px;
+}
+.videocreate{
+    font-size: 20pt;
+    letter-spacing: 0.5em;
+    text-align: center;
+    cursor: pointer;
+    padding: 5px 50px;
+    background: #808080;
+    color: #ffffff;
+    line-height: 1em;
+    transition: .3s;
+    box-shadow: 3px 3px 3px #808080;
+    border: none;
+    width: 23vw;
+    margin: 20px 0px 30px 0px;
+}
+.video-table{
+    border: 1px solid #c0c0c0;
+    margin: 20px 20px 40px 20px;
+    width: 93vw;
+    display: flex;
+}
+.td{
+    display: block;
+}
+.video-main{
+    width: 65%;
+    text-align: center;
+}
+.user-video-name{
+    display: flex;
+    height: 200px;
+}
+.video-nav-link{
+    position: relative;
+    bottom: 30px;
+}
+.video-title{
+    width: 48vw;
+}
+.video-name{
+    font-size: 30px;
+    color: #FFFFFF;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    margin: 0 0 10px 0;
+    width: 65vw;
+}
+.video-supplement{
+    color: #FFFFFF;
+    width: 65vw;
+}
+.video-btn{
+    width: 23vw;
+}
 
-
-
+.video-btn-primary{
+    font-size: 17pt;
+    letter-spacing: 0.5em;
+    text-align: center;
+    cursor: pointer;
+    padding: 5px 50px;
+    background: #c0c0c0;
+    color: #ffffff;
+    line-height: 1em;
+    transition: .3s;
+    box-shadow: 3px 3px 3px #808080;
+    border: none;
+    width: 23vw;
+    margin: 20px 0px 30px 0px;
+}
+.video-btn-primary:hover{
+    box-shadow: none;
+    color: #000000;
+    background: #808080;
+}
+.video-btn-danger{
+    font-size: 17pt;
+    letter-spacing: 0.5em;
+    text-align: center;
+    cursor: pointer;
+    padding: 5px 50px;
+    background: #c0c0c0;
+    color: #ffffff;
+    line-height: 1em;
+    transition: .3s;
+    box-shadow: 3px 3px 3px #808080;
+    border: none;
+    width: 23vw;
+}
+.video-btn-danger:hover{
+    box-shadow: none;
+    color: #000000;
+    background: #FF0000;
+}
 
 /* ルーム作成ページのcss終了 */

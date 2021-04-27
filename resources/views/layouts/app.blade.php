@@ -81,7 +81,7 @@
         <main class="py-4">
             @yield('content')
         </main>
-        <footer id="footer" class="py-4">
+        <footer id="footer" class="footer">
             <small>&copy; POVIO </small>
         </footer>
     </div>
