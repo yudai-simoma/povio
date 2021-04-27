@@ -7,7 +7,7 @@
     <main>
       <div class="video-header">
         <div class="videosindex">ルーム名</div>
-        <a href="#" class="float3"><span class="videocreate">動画投稿</span></a>
+        <a href="#" class="video-float3"><span class="videocreate">動画投稿</span></a>
       </div>
 
      <!-- 現在のvideo -->

@@ -11,18 +11,50 @@ use Auth;       //認証モデルを使用する
 
 class RoomsController extends Controller{
     
-    #indexアクションを定義
+    #トップページを表示
     public function index() {
         $rooms = Room::orderBy('created_at', 'asc')->get();
-        return view('roomsindex',[
+        return view('roomsindex', [
             'rooms' => $rooms
         ]);
         //return view('books',compact('books')); //も同じ意味
     }
     
-    #newアクションを定義
+    #ルーム作成ページを表示
     public function new() {
-        return view('roomsnew');
+        $rooms = Room::where('user_id',Auth::user()->id)->orderBy('created_at', 'asc')->get();
+        return view('roomsnew', [
+            'rooms' => $rooms
+        ]);
+    }
+
+    #ルーム作成の処理
+    public function store(Request $request) {
+
+        //バリデーション
+        $validator = Validator::make($request->all(), [
+            'name' => 'required | min:1 | max:50',
+            'supplement' => 'required | min:1 | max:1000',
+            'price' => 'required | max:6 | integer',
+            'password' => 'required | regex:/^(?=.*?[a-z])(?=.*?\d)[a-z\d]+$/i | min:6 | max:30',
+        ]);
+
+        //バリデーション:エラー 
+        if ($validator->fails()) {
+            return redirect('roomsnew')
+                ->withInput()
+                ->withErrors($validator);
+        }
+
+        // Eloquentモデル（登録処理）
+        $rooms = new Room;
+        $rooms->user_id  = Auth::user()->id; //追加のコード
+        $rooms->name =    $request->name;
+        $rooms->supplement =  $request->supplement;
+        $rooms->price =  $request->price;
+        $rooms->password =    $request->password;
+        $rooms->save(); 
+        return redirect('/')->with('message', '本登録が完了しました');
     }
 
     #showアクションを定義

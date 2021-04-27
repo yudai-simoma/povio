@@ -1,5 +1,5 @@
 <?php
-// use App\Room;
+use App\Models\Room;
 use Illuminate\Http\Request;
 
 
@@ -10,7 +10,7 @@ Route::get('/','RoomsController@index');
 Route::get('/roomsnew','RoomsController@new');
 
 // // ルームの追加処理
- Route::post('/books','BooksController@store');
+Route::post('rooms','RoomsController@store');
 
 // ルームの詳細画面
 Route::get('/roomsshow','RoomsController@show');

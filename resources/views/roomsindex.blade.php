@@ -2,19 +2,7 @@
 @extends('layouts.app')
 @section('content')
 <!DOCTYPE html>
-<html lang="ja">
-  <head>
-    <meta charset="utf-8">
-    <title> POVIO </title>
-    <meta name="robots" content="noindex,nofollow"><meta name="keywords"  content="">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <!--=============Google Font ===============-->
-    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP%7CRoboto&display=swap" rel="stylesheet">
-    <!--==============レイアウトを制御する独自のCSSを読み込み===============-->
-    <!--印象編　8-8 テキストがランダムに出現-->   
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css">
-  </head>
-
+<html lang="ja"> 
   <body>
     <main>
       <div class="text">
@@ -42,7 +30,7 @@
 
       <div class="room-header">
         <div class="roomsindex">ルーム一覧</div>
-        <a href="#" class="float3"><span class="roomcreate">ルーム作成</span></a>
+        <a href="roomsnew" class="float3"><span class="roomcreate">ルーム作成</span></a>
       </div>
 
      <!-- 現在のroom -->

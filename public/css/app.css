@@ -2097,7 +2097,7 @@ textarea.form-control {
 
 .form-group {
   margin-bottom: 1rem;
-  margin-top: 40px;
+  margin: 40px 30px 0px 0px;
 }
 
 .form-text {
@@ -7523,6 +7523,7 @@ button.bg-dark:focus {
 .mb-0,
 .my-0 {
   margin-bottom: 0 !important;
+  margin: 40px 120px 0px 0px;
 }
 
 .ml-0,
