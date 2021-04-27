@@ -1,0 +1,613 @@
+@charset "utf-8";
+/* レイアウトのためのCSS */
+
+body{
+    background:#f0f0f0;
+    font-family: 'Noto Sans JP', sans-serif;
+	color: #333;
+	font-size:1rem;
+	line-height:1.85;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-text-size-adjust: 100%; 
+	word-wrap: break-word;
+}
+
+
+ul{
+	margin:0;
+	padding: 0;
+	list-style: none;
+}
+
+a{
+	color: #FFFFFF;
+	text-decoration: none;
+    outline: none;
+}
+
+img{
+    width:100%;
+    height: auto;
+}
+
+*{
+    box-sizing: border-box
+}
+
+/* font-family */
+
+#header,h1,h2,.heading01,.count-size{
+    font-family: 'Roboto', sans-serif;
+}
+
+/* header */
+
+#header{
+    /* padding:30px 70px 40px 130px; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+@media screen and (max-width:960px) {
+#header {
+    padding: 5px 30px 0 90px;
+    }
+}
+
+@media screen and (max-width:870px) {
+#header {
+    padding: 5px 30px;
+    justify-content: center;
+    }    
+}
+
+#header h1 a{
+    color: #EEEEEE;
+    font-size: 1.7rem;
+    letter-spacing: 0.05em;
+    font-weight: normal;
+}
+
+@media screen and (max-width:768px) {
+#header h1 a{
+    font-size: 1.4rem;
+    }
+}
+
+#header .header-area{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#header ul{
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    margin: 0 20px 0 0;
+}
+
+@media screen and (max-width:870px) {
+#header ul{
+    display: none;
+    }
+}
+
+#header li,
+#header dl,
+#header dt,
+#header dd{
+    display: inline-block;
+}
+
+#header li:first-child::after{
+    content:'/';
+    padding:0 10px;     
+}
+
+#header .float3{
+    border-radius: 30px;
+}
+
+@media screen and (max-width:870px) {
+#header .float3{
+    display: none;
+}
+    
+}
+
+/* fadeDownTrigger */
+.fadeDownTrigger{
+    padding: 0 0 0 3vw;
+}
+
+/* flud-area */
+
+.fluid-area{
+    position: relative;
+    /* height: 50vh; */
+    display: flex;
+    align-items: center;
+    margin: 30px 0px;
+}
+
+.fluid-lead{
+    padding: 0 0 0 1vw;
+    z-index: 1;
+}
+
+.fluid-lead h2{
+    font-size: 4vw;
+    letter-spacing: 0.2em;
+    line-height: 1.4;
+    margin: 0 0 40px 0;
+    opacity: 0;
+}
+
+body.appear .fluid-lead h2{
+    opacity:1;   
+}
+
+.fluid-lead p{
+    font-size: 1.1rem;
+    line-height: 2;
+    margin: 50px 0px 0px 30px;
+    color: #EEEEEE;
+}
+
+.fluid-block{
+    position: absolute;
+    z-index: -1;
+    top:10%;
+    right:0;
+   width:45vw;
+    height: 65vh;
+    animation-delay: 0.5s;
+}
+
+
+@media screen and (max-width:960px) {
+.fluid-lead h2{
+    font-size: 2.5rem;
+    letter-spacing: 0.15em;
+    }
+.fluid-block{
+    width:60vw;
+    height: 60vh;
+}
+}
+
+@media screen and (max-width:768px) {
+ .fluid-block{
+    width:65vw;
+     height:60vh;
+}  
+.fluid-lead h2{
+    font-size: 1.8rem;
+    }
+    .fluid-lead{
+        padding: 0;
+    }
+.fluid-lead p{
+    margin: 0;
+}
+
+}
+
+@media screen and (max-width:550px) {
+ .fluid-block{
+     width:300px;
+     height:300px;
+}     
+
+.fluid-lead p{
+    font-size: 1rem;
+    }    
+}
+
+@media screen and (max-width:360px) {
+ .fluid-block{
+     width:240px;
+     height:240px;
+}    
+}
+
+/* footer */
+
+#page-top{
+    margin: 100px auto 0px auto;
+    display: block;
+    width: 30px;
+    height: 30px;
+    border: 2px solid;
+    border-radius: 2px;
+    border-color: #EEEEEE #EEEEEE transparent transparent;
+    transform: rotate(-45deg);
+    cursor: pointer;
+}
+
+
+#waveCanvas{
+    position: absolute;
+    bottom:0;
+    z-index: -1;
+}
+
+small{
+    text-align: center;
+    display: block;
+    margin: 0px auto 0px auto;
+    color: #EEEEEE;
+    padding: 50px 0px 100px 0px;
+}
+
+
+
+/*  トップページのcss開始 */
+/* slider */
+
+.slider{
+  position: absolute;
+  top:30px;
+  right:30px;
+  width:68%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+@media screen and (max-width:1130px) {
+.slider{
+  width:70%;
+  }
+  
+}
+
+@media screen and (max-width:940px) {
+.slider{
+  width: 94%;
+  right: 2%;
+}
+
+}
+
+/*　背景画像設定　*/
+
+
+
+/*========= 背景動画設定のCSS ===============*/
+
+/*container設定*/
+#container{
+  position: relative;/*h1の中央寄せ配置の起点とするためのrelative*/
+  height: 100vh;/*高さを全画面にあわせる*/
+} 
+
+#video-area{
+  position: fixed;
+  z-index: -1;/*最背面に設定*/
+  top: 0;
+  right:0;
+  left:0;
+  bottom:0;
+  overflow: hidden;
+}
+
+#video {
+  /*天地中央配置*/
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /*縦横幅指定*/
+  width: 177.77777778vh; /* 16:9 の幅→16 ÷ 9＝ 177.77% */
+  height: 56.25vw; /* 16:9の幅 → 9 ÷ 16 = 56.25% */
+  min-height: 100%;
+  min-width: 100%;
+  object-fit: contain;
+}
+
+.modaal-content-container video{
+  width:100%;
+}
+
+.video{
+    height: 60vh;
+    object-fit: contain;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    top: 100px;
+}
+
+.video-text{
+    position: absolute;
+    top: 500px;
+    right: 25px;
+}
+
+/*========= アプリ説明のCSS ===============*/
+
+.smoothTrigger{
+    z-index: 1;
+}
+
+.text{
+    margin: 50px 0px 120px 0px;
+}
+
+/*========= ルーム一覧 ===============*/
+tbody{
+    width: 100%;
+    display: flex;
+    /* flex-wrap: wrap; */
+    /* justify-content: space-between; */
+    padding-right: 17px;
+}
+.room-header{
+    display: flex;
+}
+.roomsindex{
+    font-size: 45px;
+    color: #FFFFFF;
+    font-weight: bolder;
+    letter-spacing: 0.2em;
+    margin-left: 30px;
+}
+.float3{
+    position: relative;
+    top: 45px;
+    left: 100px;
+}
+.roomcreate{
+    font-size: 20pt;
+    letter-spacing: 0.5em;
+    text-align: center;
+    cursor: pointer;
+    padding: 5px 50px;
+    background: #808080;
+    color: #ffffff;
+    line-height: 1em;
+    transition: .3s;
+    box-shadow: 3px 3px 3px #808080;
+    border: none;
+    width: 23vw;
+    margin: 20px 0px 30px 0px;
+}
+.table{
+    border: 1px solid #c0c0c0;
+    margin: 30px 50px 10px;
+    width: 93vw;
+    display: flex;
+
+}
+.td{
+    display: block;
+}
+.room-main{
+    border-right: 1px solid #FFFFFF;
+    width: 65%;
+    text-align: center;
+}
+.room-name{
+    font-size: 30px;
+    color: #FFFFFF;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    margin: 0 0 10px 0;
+    width: 57vw;
+}
+
+.rooom-supplement{
+    font-size: 18px;
+    color: #FFFFFF;
+}
+
+.room-money{
+    width: 8vw;
+    border-right: 1px solid #FFFFFF;
+}
+
+.room-price{
+    font-size: 28x;
+    color: #FFFFFF;
+}
+
+.room-btn{
+    width: 23vw;
+}
+
+.btn-primary{
+    font-size: 17pt;
+    letter-spacing: 0.5em;
+    text-align: center;
+    cursor: pointer;
+    padding: 5px 50px;
+    background: #c0c0c0;
+    color: #ffffff;
+    line-height: 1em;
+    transition: .3s;
+    box-shadow: 3px 3px 3px #808080;
+    border: none;
+    width: 23vw;
+    margin: 20px 0px 30px 0px;
+}
+.btn-primary:hover{
+    box-shadow: none;
+    color: #000000;
+    background: #808080;
+}
+.btn-danger{
+    font-size: 17pt;
+    letter-spacing: 0.5em;
+    text-align: center;
+    cursor: pointer;
+    padding: 5px 50px;
+    background: #c0c0c0;
+    color: #ffffff;
+    line-height: 1em;
+    transition: .3s;
+    box-shadow: 3px 3px 3px #808080;
+    border: none;
+    width: 23vw;
+}
+.btn-danger:hover{
+    box-shadow: none;
+    color: #000000;
+    background: #FF0000;
+}
+.btn-enter{
+    font-size: 17pt;
+    letter-spacing: 0.5em;
+    text-align: center;
+    cursor: pointer;
+    padding: 5px 50px;
+    background: #c0c0c0;
+    color: #ffffff;
+    line-height: 1em;
+    transition: .3s;
+    box-shadow: 3px 3px 3px #808080;
+    border: none;
+    width: 23vw;
+}
+.btn-enter:hover{
+    box-shadow: none;
+    color: #000000;
+    background: #808080;
+}
+.footer{
+    background-color: #000000;
+}
+/* トップページのcss終了 */
+
+
+
+
+/* ルーム作成ページのcss開始 */
+.user-video{
+    height: 188px;
+    width: 24vw;
+    object-fit: contain;
+}
+/* 動画一覧 */
+tbody{
+    width: 100%;
+    display: flex;
+    /* flex-wrap: wrap; */
+    /* justify-content: space-between; */
+    padding-right: 17px;
+}
+.video-header{
+    display: flex;
+    margin-bottom: 50px;
+}
+.videosindex{
+    font-size: 45px;
+    color: #FFFFFF;
+    font-weight: bolder;
+    letter-spacing: 0.2em;
+    margin-left: 30px;
+}
+.float3{
+    position: relative;
+    top: 45px;
+    left: 100px;
+}
+.videocreate{
+    font-size: 20pt;
+    letter-spacing: 0.5em;
+    text-align: center;
+    cursor: pointer;
+    padding: 5px 50px;
+    background: #808080;
+    color: #ffffff;
+    line-height: 1em;
+    transition: .3s;
+    box-shadow: 3px 3px 3px #808080;
+    border: none;
+    width: 23vw;
+    margin: 20px 0px 30px 0px;
+}
+.video-table{
+    border: 1px solid #c0c0c0;
+    margin: 20px 20px 40px 20px;
+    width: 93vw;
+    display: flex;
+}
+.td{
+    display: block;
+}
+.video-main{
+    width: 65%;
+    text-align: center;
+}
+.user-video-name{
+    display: flex;
+    height: 200px;
+}
+.video-nav-link{
+    position: relative;
+    bottom: 30px;
+}
+.video-title{
+    width: 48vw;
+}
+.video-name{
+    font-size: 30px;
+    color: #FFFFFF;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    margin: 0 0 10px 0;
+    width: 65vw;
+}
+.video-supplement{
+    color: #FFFFFF;
+    width: 65vw;
+}
+.video-btn{
+    width: 23vw;
+}
+
+.video-btn-primary{
+    font-size: 17pt;
+    letter-spacing: 0.5em;
+    text-align: center;
+    cursor: pointer;
+    padding: 5px 50px;
+    background: #c0c0c0;
+    color: #ffffff;
+    line-height: 1em;
+    transition: .3s;
+    box-shadow: 3px 3px 3px #808080;
+    border: none;
+    width: 23vw;
+    margin: 20px 0px 30px 0px;
+}
+.video-btn-primary:hover{
+    box-shadow: none;
+    color: #000000;
+    background: #808080;
+}
+.video-btn-danger{
+    font-size: 17pt;
+    letter-spacing: 0.5em;
+    text-align: center;
+    cursor: pointer;
+    padding: 5px 50px;
+    background: #c0c0c0;
+    color: #ffffff;
+    line-height: 1em;
+    transition: .3s;
+    box-shadow: 3px 3px 3px #808080;
+    border: none;
+    width: 23vw;
+}
+.video-btn-danger:hover{
+    box-shadow: none;
+    color: #000000;
+    background: #FF0000;
+}
+
+/* ルーム作成ページのcss終了 */
