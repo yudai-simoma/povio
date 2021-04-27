@@ -611,3 +611,11 @@ tbody{
 }
 
 /* ルーム作成ページのcss終了 */
+
+
+
+
+/* フラッシュメッセージのcss */
+.flash_message{
+    color: #FFFFFF;
+}
