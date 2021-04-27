@@ -2435,6 +2435,7 @@ textarea.form-control {
 }
 .btn:not(:disabled):not(.disabled) {
   cursor: pointer;
+  padding: 8px 0px 8px 13px;
 }
 a.btn.disabled,
 fieldset:disabled a.btn {

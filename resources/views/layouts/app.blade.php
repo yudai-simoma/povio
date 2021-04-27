@@ -82,7 +82,7 @@
             @yield('content')
         </main>
         <footer id="footer" class="footer">
-            <small>&copy; POVIO </small>
+            <small>POVIO </small>
         </footer>
     </div>
 </body>
