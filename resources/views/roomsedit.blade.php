@@ -8,16 +8,16 @@
                 <div class="card-header">{{ __('ルーム変更') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
+                    <form action="{{ url('rooms/update') }}" method="POST">
                         @csrf
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('ルーム名') }}</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('ルーム名') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{$room->name}}" required autocomplete="name" autofocus>
 
-                                @error('email')
+                                @error('name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -26,12 +26,12 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('ルームの説明') }}</label>
+                            <label for="supplement" class="col-md-4 col-form-label text-md-right">{{ __('ルームの説明') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                            <textarea rows="10" cols="10" id="name" class="form-control @error('supplement') is-invalid @enderror" name="supplement" required autocomplete="supplement" autofocus>{{ $room->supplement }}</textarea>
 
-                                @error('email')
+                                @error('supplement')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -40,12 +40,12 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('毎月の金額') }}</label>
+                            <label for="price" class="col-md-4 col-form-label text-md-right">{{ __('毎月の金額') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                <input id="price" type="text" class="form-control @error('price') is-invalid @enderror" name="price" value="{{ $room->price }}" required autocomplete="price" autofocus>
 
-                                @error('email')
+                                @error('price')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -57,7 +57,7 @@
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" value="{{ $room->password }}">
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
@@ -74,6 +74,11 @@
                                 </button>
                             </div>
                         </div>
+
+                        <!-- id値を送信 -->
+                        <input type="hidden" name="id" value="{{$room->id}}">
+                        <!--/ id値を送信 -->
+
                     </form>
                 </div>
             </div>
