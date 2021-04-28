@@ -9,23 +9,23 @@ Route::get('/','RoomsController@index');
 // ルームの追加画面
 Route::get('/roomsnew','RoomsController@new');
 
-// // ルームの追加処理
+// ルームの追加処理
 Route::post('rooms','RoomsController@store');
 
 // ルームの詳細画面
 Route::get('/roomsshow','RoomsController@show');
 
 // ルームの編集画面
-Route::get('/roomsedit','RoomsController@edit');
+Route::post('/roomsedit/{rooms}','RoomsController@edit')->name('room.edit');
 
-// // ルームの編集処理
- Route::get('/roomsedit','RoomsController@edit');
+Route::get('/roomsedit/{rooms}','RoomsController@edit');
+
+// ルームの編集処理
+Route::post('/rooms/update','RoomsController@update');
 
 // //  ルームを削除 
- Route::delete('/room/{room}','RoomsController@destroy');
+Route::delete('/room/{room}','RoomsController@destroy');
 
-// // ルームへのアクセスページ
-// Route::get('/roomsedit','RoomsController@edit');
 
 
 // 動画の一覧表示(videos.blade.php)

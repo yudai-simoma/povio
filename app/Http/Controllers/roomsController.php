@@ -46,7 +46,7 @@ class RoomsController extends Controller{
                 ->withErrors($validator);
         }
 
-        // Eloquentモデル（登録処理）
+        //登録処理
         $rooms = new Room;
         $rooms->user_id  = Auth::user()->id; //追加のコード
         $rooms->name =    $request->name;
@@ -67,13 +67,44 @@ class RoomsController extends Controller{
         ]);
     }
 
-    #editアクションを定義
-    public function edit() {
-        return view('roomsedit');
+    #ルーム編集ページを表示
+    public function edit($room_id) {
+        $rooms = Room::where("user_id", Auth::user()->id)->find($room_id);
+        return view('roomsedit',[
+            "room" => $rooms
+        ]);
+    }
+
+    //ルーム編集処理
+    public function update(Request $request) {
+
+        //バリデーション
+        $validator = Validator::make($request->all(), [
+            'id' => 'required',
+            'name' => 'required | min:1 | max:50',
+            'supplement' => 'required | min:1 | max:1000',
+            'price' => 'required | max:6 | integer',
+            'password' => 'required | regex:/^(?=.*?[a-z])(?=.*?\d)[a-z\d]+$/i | min:6 | max:30',
+        ]);
+
+        //バリデーション:エラー 
+        if ($validator->fails()) {
+            return back()
+                ->withInput()
+                ->withErrors($validator);
+        }
+
+        // 編集処理
+        $rooms = Room::find($request->id);
+        $rooms->name = $request->name;
+        $rooms->supplement = $request->supplement;
+        $rooms->price = $request->price;
+        $rooms->password = $request->password;
+        $rooms->save(); 
+        return redirect('/')->with('message', 'ルームを編集しました');
     }
 
     // ルームの削除機能
-     //削除
      public function destroy(Room $room) {
         $room->delete();
         return redirect('/')->with('message', 'ルームを削除しました');
