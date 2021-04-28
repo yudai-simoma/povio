@@ -18,9 +18,9 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/reset.css">
-    <link rel="stylesheet" type="text/css" href="css/parts.css">
-    <link rel="stylesheet" type="text/css" href="css/layout.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/reset.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/parts.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/layout.css') }}">
 </head>
 <body>
     <div id="app">
