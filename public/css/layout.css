@@ -465,7 +465,7 @@ tbody{
     cursor: pointer;
     padding: 5px 50px;
     background: #c0c0c0;
-    color: #ffffff;
+    /* color: #ffffff; */
     line-height: 1em;
     transition: .3s;
     box-shadow: 3px 3px 3px #808080;
@@ -476,6 +476,14 @@ tbody{
     box-shadow: none;
     color: #000000;
     background: #808080;
+}
+.flrst-login{
+    font-size: 20px;
+    color: #FFFFFF;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    margin: 19px 0px 10px 26px;
+    width: 20vw;
 }
 .footer{
     background-color: #000000;

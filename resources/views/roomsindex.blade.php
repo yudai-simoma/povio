@@ -30,11 +30,13 @@
 
       <div class="room-header">
         <div class="roomsindex">ルーム一覧</div>
+        @if (Auth::check())
         <a href="roomsnew" class="float3"><span class="roomcreate">ルーム作成</span></a>
+        @endif
       </div>
 
      <!-- 現在のroom -->
-      @if (count($rooms) > 0 && Auth::check())
+      @if (count($rooms) > 0)
         @foreach ($rooms as $room)
           <table class="table">
             <tbody>
@@ -57,33 +59,37 @@
 
               <tr class="room-btn">
                 <td>
-                  @if (Auth::check() == $room->user_id)
-                     <!--  ルーム: 編集ボタン -->
-                    <form action="{{ url('roomsedit/'.$room->id) }}" method="POST">
-                      @csrf
-                      <button type="submit" class="btn-primary">
-                          編集
-                      </button>
-                    </form>
-                    <!-- ルーム: 削除ボタン -->
-                    <form action="{{ url('room/'.$room->id) }}" method="POST">
-                      @csrf
-                      @method('DELETE')
-                      <button type="submit" class="btn-danger">
-                          削除
-                      </button>
-                    </form>
+                  @if (Auth::check())
+                    @if (Auth::id() == $room->user_id)
+                      <!--  ルーム: 編集ボタン -->
+                      <form action="{{ url('roomsedit/'.$room->id) }}" method="POST">
+                        @csrf
+                        <button type="submit" class="btn-primary">
+                            編集
+                        </button>
+                      </form>
+                      <!-- ルーム: 削除ボタン -->
+                      <form action="{{ url('room/'.$room->id) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn-danger">
+                            削除
+                        </button>
+                      </form>
+                    @else
+                      <!-- ルーム入室 -->
+                      <form action="{{ url('room/'.$room->id) }}" method="POST" class="form-horizontal">
+                        @csrf<!-- CSRFからアプリケーションを守る記述 -->
+                        <!-- ルームパスワード -->
+                        <input type="text" name="item_name" placeholder="パスワード" class="form-control">
+                        <!-- ルーム　入室ボタン -->
+                        <button type="submit" class="btn-enter">
+                          入室
+                        </button>
+                      </form>
+                    @endif
                   @else
-                    <!-- ルーム入室 -->
-                    <form action="{{ url('room/'.$room->id) }}" method="POST" class="form-horizontal">
-                      @csrf<!-- CSRFからアプリケーションを守る記述 -->
-                      <!-- ルームパスワード -->
-                      <input type="text" name="item_name" placeholder="パスワード" class="form-control">
-                      <!-- ルーム　入室ボタン -->
-                      <button type="submit" class="btn-enter">
-                        入室
-                      </button>
-                    </form>
+                    <div class="flrst-login">入室するには<br>ログインして<br>ください</div>
                   @endif
                 </td>
               </tr>
