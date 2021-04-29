@@ -52,9 +52,9 @@
 
 | Column        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
-| content       |            | null: false                    |
+| video_content |            | null: false                    |
 | title         | string     | null: false                    |
-| description   | text       | null: false                    |
+| description   | string     | null: false                    |
 | user          | references | null: false, foreign_key: true |
 | room          | references | null: false, foreign_key: true |
 
@@ -81,7 +81,7 @@
 
 | Column  | Type       | Options                        |
 | ------- | ---------- | ------------------------------ |
-| text    | text       | null: false                    |
+| text    | string     | null: false                    |
 | user    | references | null: false, foreign_key: true |
 | video   | references | null: false, foreign_key: true |
 
