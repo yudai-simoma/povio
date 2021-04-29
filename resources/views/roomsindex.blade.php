@@ -78,10 +78,10 @@
                       </form>
                     @else
                       <!-- ルーム入室 -->
-                      <form action="{{ url('room/'.$room->id) }}" method="POST" class="form-horizontal">
-                        @csrf<!-- CSRFからアプリケーションを守る記述 -->
+                      <form action="{{ url('roomsshow/'.$room->id)}}" method="GET" class="form-horizontal">
+                        @csrf
                         <!-- ルームパスワード -->
-                        <input type="text" name="item_name" placeholder="パスワード" class="form-control">
+                        <input type="text" name="password" placeholder="パスワード" class="form-control">
                         <!-- ルーム　入室ボタン -->
                         <button type="submit" class="btn-enter">
                           入室

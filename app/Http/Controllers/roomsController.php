@@ -29,7 +29,7 @@ class RoomsController extends Controller{
     }
 
     #ルーム作成の処理
-    public function store(Request $request) {
+    public function create(Request $request) {
 
         //バリデーション
         $validator = Validator::make($request->all(), [
@@ -58,13 +58,15 @@ class RoomsController extends Controller{
     }
 
     #showアクションを定義
-    public function show() {
-        $rooms = Room::orderBy('created_at', 'asc')->get();
-        // $videos = Video::orderBy('created_at', 'asc')->get();
-        return view('roomsshow',[
-            'rooms' => $rooms
-            // 'videos' => $videos
-        ]);
+    public function show(Request $request) {
+        dd($request);
+        // if ($rooms->password == $request->password){
+            return view('roomsshow', [
+                'rooms' => $rooms
+            ]);
+        // }else{
+        //     redirect('/')->with('message', 'パスワードが違います');
+        // }
     }
 
     #ルーム編集ページを表示

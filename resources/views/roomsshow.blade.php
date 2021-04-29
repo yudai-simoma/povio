@@ -6,7 +6,7 @@
   <body>
     <main>
       <div class="video-header">
-        <div class="videosindex">ルーム名</div>
+        <div class="videosindex">{{ $rooms->name }}</div>
         <a href="#" class="video-float3"><span class="videocreate">動画投稿</span></a>
       </div>
 
