@@ -10,13 +10,13 @@ Route::get('/','RoomsController@index');
 Route::get('/roomsnew','RoomsController@new');
 
 // ルームの追加処理
-Route::post('rooms','RoomsController@store');
+Route::post('rooms','RoomsController@create');
 
 // ルームの詳細画面
-Route::get('/roomsshow','RoomsController@show');
+Route::get('/roomsshow/{rooms}','RoomsController@show');
 
 // ルームの編集画面
-Route::post('/roomsedit/{rooms}','RoomsController@edit')->name('room.edit');
+Route::post('/roomsedit/{rooms}','RoomsController@edit');
 
 Route::get('/roomsedit/{rooms}','RoomsController@edit');
 
