@@ -7,15 +7,16 @@
             <div class="card">
                 <div class="card-header">{{ __('動画投稿') }}</div>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
+                <div class="video-body">
+                    <form enctype="multipart/form-data" method="POST" action="{{ url('videos') }}">
                         @csrf
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('動画選択') }}</label>
+                            <label for="video_content" class="video_content col-md-4 col-form-label text-md-right">{{ __('動画選択') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+
+                                <input id="video_content" type="file" name="video_content" value="{{ old('video_content') }}" required autocomplete="video_content" autofocus>
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -26,10 +27,10 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('タイトル') }}</label>
+                            <label for="title" class="col-md-4 col-form-label text-md-right">{{ __('タイトル') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                <input id="title" type="text" class="form-control @error('email') is-invalid @enderror" name="title" value="{{ old('title') }}" required autocomplete="title" autofocus>
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -40,10 +41,10 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('説明') }}</label>
+                            <label for="description" class="col-md-4 col-form-label text-md-right">{{ __('説明') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                <textarea rows="10" cols="10" id="name" class="form-control @error('description') is-invalid @enderror" name="description" required autocomplete="description" autofocus>{{ old('description') }}</textarea>
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
