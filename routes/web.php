@@ -13,12 +13,11 @@ Route::get('/roomsnew','RoomsController@new');
 Route::post('rooms','RoomsController@create');
 
 // ルームの詳細画面
-Route::get('/roomsshow/{rooms}','RoomsController@show');
+Route::get('/roomsshow/{rooms}','RoomsController@show')->name('room.show');
 
 // ルームの編集画面
 Route::post('/roomsedit/{rooms}','RoomsController@edit');
 
-Route::get('/roomsedit/{rooms}','RoomsController@edit');
 
 // ルームの編集処理
 Route::post('/rooms/update','RoomsController@update');
@@ -28,14 +27,11 @@ Route::delete('/room/{room}','RoomsController@destroy');
 
 
 
-// 動画の一覧表示(videos.blade.php)
-Route::get('/videos','VideosController@index');
+// 動画の投稿ページ
+Route::get('videosnew/{rooms}','VideosController@new');
 
-// 動画の追加画面
-Route::get('/videosnew','VideosController@new');
-
-// // 動画の追加処理
-// Route::post('/videos','VideosController@store');
+// 動画の追加処理
+Route::post('videos','VideosController@store');
 
 // 動画の編集画面
 Route::get('/videosedit','VideosController@edit');
