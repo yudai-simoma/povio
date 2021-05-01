@@ -8,17 +8,16 @@
                 <div class="card-header">{{ __('動画投稿') }}</div>
 
                 <div class="video-body">
-                    <form enctype="multipart/form-data" method="POST" action="{{ url('videos') }}">
+                    <form enctype="multipart/form-data" action="{{ url('videos') }}" method="POST">
                         @csrf
 
                         <div class="form-group row">
                             <label for="video_content" class="video_content col-md-4 col-form-label text-md-right">{{ __('動画選択') }}</label>
 
                             <div class="col-md-6">
+                            <input id="video_content" type="file" name="video_content" value="{{ old('video_content') }}" required autocomplete="video_content" autofocus>
 
-                                <input id="video_content" type="file" name="video_content" value="{{ old('video_content') }}" required autocomplete="video_content" autofocus>
-
-                                @error('email')
+                                @error('video_content')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -32,7 +31,7 @@
                             <div class="col-md-6">
                                 <input id="title" type="text" class="form-control @error('email') is-invalid @enderror" name="title" value="{{ old('title') }}" required autocomplete="title" autofocus>
 
-                                @error('email')
+                                @error('title')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -46,7 +45,7 @@
                             <div class="col-md-6">
                                 <textarea rows="10" cols="10" id="name" class="form-control @error('description') is-invalid @enderror" name="description" required autocomplete="description" autofocus>{{ old('description') }}</textarea>
 
-                                @error('email')
+                                @error('description')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -61,6 +60,10 @@
                                 </button>
                             </div>
                         </div>
+
+                        <!-- id値を送信 -->
+                        <input type="hidden" name="room_id" value="{{$room->id}}">
+                        <!--/ id値を送信 -->
                     </form>
                 </div>
             </div>

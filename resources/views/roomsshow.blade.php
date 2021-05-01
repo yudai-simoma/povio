@@ -6,8 +6,18 @@
   <body>
     <main>
       <div class="video-header">
-        <div class="videosindex">{{ $rooms->name }}</div>
-        <a href="#" class="video-float3"><span class="videocreate">動画投稿</span></a>
+        <div class="videosindex">{{ $room->name}}</div>
+        <!--  動画投稿ボタン -->
+        @if (Auth::id() == $room->user_id)
+        <form action="{{ url('videosnew/'.$room->id) }}" method="GET" class="video-float3">
+          @csrf
+          <button type="submit" class="videocreate">
+            動画投稿
+          </button>
+        </form>
+        @endif
+
+        <!-- <a href="../videosnew" class="video-float3"><span class="videocreate">動画投稿</span></a> -->
       </div>
 
      <!-- 現在のvideo -->
@@ -37,17 +47,17 @@
                   <!-- ルームタイトル -->
                   <div id="video-detail" class="hide-area"> 
                     <video poster="img/movie.jpg" webkit-playsinline playsinline controls class="user-video">
-                      <source src="public/video/movie.mp4" type="video/mp4">
-                      <source src="public/video/movie.ogv" type="video/ogv">
-                      <source src="public/video/movie.webm" type="video/webm">
+                      <source src="{{ asset('video/中華料理 Pexels Videos 2620043.mp4') }}" type="video/mp4">
+                      <source src="{{ asset('video/movie.ogv') }}" type="video/ogv">
+                      <source src="{{ asset('video/movie.webm') }}" type="video/webm">
                     </video>
                   </div>
 
                   <div class="video-title">
                     <!-- ルームタイトル -->
-                    <div class="video-name">{{ "タイトル" }}</div>
+                    <div class="video-name">{{ "中華料理" }}</div>
                     <!-- ルーム説明 -->
-                    <div class="video-supplement">{{ "動画の説明" }}</div>
+                    <div class="video-supplement">{{ "お家で簡単にお店レベルの酢豚が作れる" }}</div>
                   </div>
                 </td>
               </tr>
