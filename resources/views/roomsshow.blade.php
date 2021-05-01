@@ -21,49 +21,50 @@
       </div>
 
      <!-- 現在のvideo -->
+      @if (count($videos) > 0)
+        @foreach ($videos as $video)
+        @if ($room->id == $video->room_id)
           <table class="video-table">
             <tbody>
               <tr class="video-main">
                 <td class="user-video-name">
-                <li class="nav-item dropdown">
-                      <a id="navbarDropdown" class="video-nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre></a>
+                  <li class="nav-item dropdown">
+                    <a id="navbarDropdown" class="video-nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre></a>
 
-                      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                          <a class="dropdown-item" href="{{ route('logout') }}"
-                              onclick="event.preventDefault();
-                                            document.getElementById('logout-form').submit();">
-                              {{ __('編集') }}
-                          </a>
-                          <a class="dropdown-item" href="{{ route('logout') }}"
-                              onclick="event.preventDefault();
-                                            document.getElementById('logout-form').submit();">
-                              {{ __('削除') }}
-                          </a>
-                          <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                              @csrf
-                          </form>
-                      </div>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                                          document.getElementById('logout-form').submit();">
+                            {{ __('編集') }}
+                        </a>
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                                          document.getElementById('logout-form').submit();">
+                            {{ __('削除') }}
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    </div>
                   </li>
-                  <!-- ルームタイトル -->
+                  <!-- 動画 -->
                   <div id="video-detail" class="hide-area"> 
-                    <video poster="img/movie.jpg" webkit-playsinline playsinline controls class="user-video">
-                      <source src="{{ asset('video/中華料理 Pexels Videos 2620043.mp4') }}" type="video/mp4">
-                      <source src="{{ asset('video/movie.ogv') }}" type="video/ogv">
-                      <source src="{{ asset('video/movie.webm') }}" type="video/webm">
-                    </video>
+                    <iframe src="/upload/{{ $video->video_content }}" frameborder="0" class="user-video"></iframe>
                   </div>
 
                   <div class="video-title">
-                    <!-- ルームタイトル -->
-                    <div class="video-name">{{ "中華料理" }}</div>
-                    <!-- ルーム説明 -->
-                    <div class="video-supplement">{{ "お家で簡単にお店レベルの酢豚が作れる" }}</div>
+                    <!-- 動画タイトル -->
+                    <div class="video-name">{{ $video->title }}</div>
+                    <!-- 動画説明 -->
+                    <div class="video-supplement">{{ $video->description }}</div>
                   </div>
                 </td>
               </tr>
             </tbody>
           </table>
-
+        @endif
+        @endforeach
+      @endif
       <!-- ページ先頭にスムーススクロール -->
       <div id="page-top"><a href="#header"></a></div>
     </main>   

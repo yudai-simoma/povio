@@ -496,9 +496,12 @@ tbody{
 
 /* ルーム作成ページのcss開始 */
 .user-video{
-    height: 188px;
-    width: 24vw;
+    height: 170px;
+    width: 21vw;
     object-fit: contain;
+    position: relative;
+    top: 20px;
+    left: 10px;
 }
 /* 動画一覧 */
 tbody{
