@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 //使うClassを宣言:自分で追加
 use App\Models\Room;   //Roomモデルを使えるようにする
+use App\Models\Video;
 use Validator;  //バリデーションを使えるようにする
 use Auth;       //認証モデルを使用する
 
@@ -57,16 +58,14 @@ class RoomsController extends Controller{
         return redirect('/')->with('message', 'ルームを作成しました');
     }
 
-    #showアクションを定義
-    public function show(Request $request) {
-        dd($request);
-        // if ($rooms->password == $request->password){
-            return view('roomsshow', [
-                'rooms' => $rooms
-            ]);
-        // }else{
-        //     redirect('/')->with('message', 'パスワードが違います');
-        // }
+    #ルーム詳細ページを表示
+    public function show($room_id) {
+        $rooms = Room::find($room_id);
+        $videos = Video::orderBy('created_at', 'asc')->get();
+        return view('roomsshow', [
+            'room' => $rooms,
+            'videos' => $videos
+        ]);
     }
 
     #ルーム編集ページを表示
@@ -79,7 +78,7 @@ class RoomsController extends Controller{
 
     //ルーム編集処理
     public function update(Request $request) {
-
+        
         //バリデーション
         $validator = Validator::make($request->all(), [
             'id' => 'required',

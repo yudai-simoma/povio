@@ -53,7 +53,7 @@
               <tr class="room-money">
                 <td>
                     <div class="room-price">月額<br>{{ $room->price }}<br>円</div>
-                    <div class="room-price"><br>{{ "ユーザー名" }}<br></div>
+                    <!-- <div class="room-price"><br>{{ "ユーザー名" }}<br></div> -->
                 </td>
               </tr>
 
@@ -76,9 +76,17 @@
                             削除
                         </button>
                       </form>
+                      <!-- ルーム入室 -->
+                      <form action="{{ url('roomsshow/'.$room->id) }}" method="GET" class="form-horizontal">
+                        @csrf
+                        <!-- ルーム　入室ボタン -->
+                        <button type="submit" class="btn-enter">
+                          入室
+                        </button>
+                      </form>
                     @else
                       <!-- ルーム入室 -->
-                      <form action="{{ url('roomsshow/'.$room->id)}}" method="GET" class="form-horizontal">
+                      <form action="{{ url('roomsshow/'.$room->id) }}" method="GET" class="form-horizontal">
                         @csrf
                         <!-- ルームパスワード -->
                         <input type="text" name="password" placeholder="パスワード" class="form-control">
