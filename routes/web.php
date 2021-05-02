@@ -18,7 +18,6 @@ Route::get('/roomsshow/{rooms}','RoomsController@show')->name('room.show');
 // ルームの編集画面
 Route::post('/roomsedit/{rooms}','RoomsController@edit');
 
-
 // ルームの編集処理
 Route::post('/rooms/update','RoomsController@update');
 
@@ -39,8 +38,8 @@ Route::get('/videosedit','VideosController@edit');
 // // 動画の編集処理
 // Route::post('/videos','VideosController@store');
 
-// //  動画の削除 
-// Route::delete('/video/{video}','VideosController@destroy');
+//  動画の削除 
+Route::delete('/video/{video}','VideosController@destroy');
 
 
 // ユーザー登録で記述

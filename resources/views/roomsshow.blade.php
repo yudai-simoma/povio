@@ -32,18 +32,19 @@
                     <a id="navbarDropdown" class="video-nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre></a>
 
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <!-- 動画編集ボタン -->
                         <a class="dropdown-item" href="{{ route('logout') }}"
                             onclick="event.preventDefault();
                                           document.getElementById('logout-form').submit();">
                             {{ __('編集') }}
                         </a>
-                        <a class="dropdown-item" href="{{ route('logout') }}"
-                            onclick="event.preventDefault();
-                                          document.getElementById('logout-form').submit();">
-                            {{ __('削除') }}
-                        </a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                            @csrf
+                        <!-- 動画削除ボタン -->
+                        <form action="{{ url('video/'.$video->id) }}" method="POST" class="dropdown-item">
+                          @csrf
+                          @method('DELETE')
+                          <button type="submit" class="btn-danger">
+                              削除
+                          </button>
                         </form>
                     </div>
                   </li>

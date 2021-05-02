@@ -62,4 +62,10 @@ class VideosController extends Controller{
     public function edit() {
         return view('videosedit');
     }
+
+    // ルームの削除機能
+    public function destroy(Video $video) {
+        $video->delete();
+        return back()->with('message', '動画を削除しました');
+    }
 }
