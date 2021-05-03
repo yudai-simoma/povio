@@ -33,11 +33,12 @@
 
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                         <!-- 動画編集ボタン -->
-                        <a class="dropdown-item" href="{{ route('logout') }}"
-                            onclick="event.preventDefault();
-                                          document.getElementById('logout-form').submit();">
-                            {{ __('編集') }}
-                        </a>
+                        <form action="{{ url('videosedit/'.$video->id) }}" method="POST" class="dropdown-item">
+                          @csrf
+                          <button type="submit" class="btn-primary">
+                              編集
+                          </button>
+                        </form>
                         <!-- 動画削除ボタン -->
                         <form action="{{ url('video/'.$video->id) }}" method="POST" class="dropdown-item">
                           @csrf
