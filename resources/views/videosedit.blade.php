@@ -55,15 +55,11 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <a class="btn btn-primary" href="{{ url('roomsshow/'.$video['room_id']) }}">
-                                    キャンセル
-                                </a>
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('編集') }}
                                 </button>
                             </div>
                         </div>
-
                         <!-- video_id値を送信 -->
                         <input type="hidden" name="id" value="{{$video['id']}}">
                         <!--/ video_id値を送信 -->
@@ -71,6 +67,18 @@
                         <!-- room_id値を送信 -->
                         <input type="hidden" name="room_id" value="{{$video['room_id']}}">
                         <!--/ room_id値を送信 -->
+                    </form>
+                    <form action="{{ url('roomsshow/'.$video->room_id) }}" method="GET" class="form-horizontal">
+                        @csrf
+                        <!-- ルーム入室ボタン -->
+                        <div class="col-md-8 offset-md-4">
+                            <button type="submit" class="btn video-btn-cancel">
+                            キャンセル
+                            </button>
+                        </div>
+                        <!-- id値を送信 -->
+                        <input type="hidden" name="room_id" value="{{$video->room_id}}">
+                        <!--/ id値を送信 -->
                     </form>
                 </div>
             </div>
