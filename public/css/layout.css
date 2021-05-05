@@ -506,6 +506,25 @@ tbody{
 /* ルーム作成ページのcss終了 */
 
 /* ルーム詳細ページのcss */
+.video-top{
+    position: relative;
+    top: 15px;
+    left: 100px;
+}
+.video-home{
+    font-size: 20pt;
+    text-align: center;
+    cursor: pointer;
+    padding: 5px 50px;
+    background: #808080;
+    color: #ffffff;
+    line-height: 1em;
+    transition: .3s;
+    box-shadow: 3px 3px 3px #808080;
+    border: none;
+    width: 23vw;
+    margin: 20px 0px 30px 0px;
+}
 /* 動画一覧 */
 tbody{
     width: 100%;
@@ -523,12 +542,12 @@ tbody{
     color: #FFFFFF;
     font-weight: bolder;
     letter-spacing: 0.2em;
-    margin-left: 30px;
+    margin: 0px 200px 0px 30px;
 }
 .video-float3{
-    position: relative;
+    /* position: relative;
     top: 45px;
-    left: 100px;
+    left: 100px; */
 }
 .videocreate{
     font-size: 20pt;
@@ -544,6 +563,11 @@ tbody{
     border: none;
     width: 23vw;
     margin: 20px 0px 30px 0px;
+}
+.videocreate:hover{
+    box-shadow: none;
+    color: #000000;
+    background: #808080;
 }
 .video-table{
     border: 1px solid #c0c0c0;

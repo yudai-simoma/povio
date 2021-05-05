@@ -7,15 +7,18 @@
     <main>
       <div class="video-header">
         <div class="videosindex">{{ $room['name']}}</div>
-        <!--  動画投稿ボタン -->
-        @if (Auth::id() == $room->user_id)
-        <form action="{{ url('videosnew/'.$room->id) }}" method="GET" class="video-float3">
-          @csrf
-          <button type="submit" class="videocreate">
-            動画投稿
-          </button>
-        </form>
-        @endif
+        <div class="video-top">
+          <a href='/povio' class="video-home">戻る</a>
+          <!--  動画投稿ボタン -->
+          @if (Auth::id() == $room->user_id)
+          <form action="{{ url('videosnew/'.$room->id) }}" method="GET" class="video-float3">
+            @csrf
+            <button type="submit" class="videocreate">
+              動画投稿
+            </button>
+          </form>
+          @endif
+        </div>
 
         <!-- <a href="../videosnew" class="video-float3"><span class="videocreate">動画投稿</span></a> -->
       </div>
