@@ -10,7 +10,7 @@
                 <!-- バリデーションエラーの表示に使用-->
                 @include('common.errors')
                 <!-- バリデーションエラーの表示に使用-->
-                
+
                 <div class="card-body">
                     <form enctype="multipart/form-data" action="{{ url('videos/update') }}" method="POST">
                         @csrf
@@ -44,7 +44,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="description" class="col-md-4 col-form-label text-md-right">{{ __('説明') }}</label>
+                            <label for="description" class="col-md-4 col-form-label text-md-right">{{ __('動画の説明') }}</label>
 
                             <div class="col-md-6">
                             <textarea rows="10" cols="10" id="name" class="form-control @error('description') is-invalid @enderror" name="description" required autocomplete="description" autofocus>{{ $video['description'] }}</textarea>

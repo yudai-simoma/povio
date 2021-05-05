@@ -7,6 +7,10 @@
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
 
+                <!-- バリデーションエラーの表示に使用-->
+                @include('common.errors')
+                <!-- バリデーションエラーの表示に使用-->
+                
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
