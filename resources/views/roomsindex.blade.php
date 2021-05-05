@@ -79,7 +79,7 @@
                       <!-- ルーム入室 -->
                       <form action="{{ url('roomsshow/'.$room->id) }}" method="GET" class="form-horizontal">
                         @csrf
-                        <!-- ルーム　入室ボタン -->
+                        <!-- ルーム入室ボタン -->
                         <button type="submit" class="btn-enter">
                           入室
                         </button>
@@ -90,7 +90,7 @@
                         @csrf
                         <!-- ルームパスワード -->
                         <input type="text" name="password" placeholder="パスワード" class="form-control">
-                        <!-- ルーム　入室ボタン -->
+                        <!-- ルーム入室ボタン -->
                         <button type="submit" class="btn-enter">
                           入室
                         </button>

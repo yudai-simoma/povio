@@ -58,9 +58,57 @@ class VideosController extends Controller{
         ]))->with('message', '動画投稿が完了しました');
     }
 
-    #editアクションを定義
-    public function edit() {
-        return view('videosedit');
+    #動画編集ページ表示
+    public function edit($video_id) {
+        $videos = Video::find($video_id);
+        return view('videosedit',[
+            "video" => $videos
+        ]);
+    }
+
+    //動画編集処理
+    public function update(Request $request) {
+        //バリデーション
+        $validator = Validator::make($request->all(), [
+            'id' => 'required',
+            'video_content' => 'required',
+            'title' => 'required | min:1 | max:50',
+            'description' => 'required | min:1 | max:1000',
+        ]);
+
+        //バリデーション:エラー 
+        if ($validator->fails()) {
+            $video_id = $request -> input('id');
+            $room_id  = $request -> input('room_id');
+            $video_content = $request -> input('video_content');
+            $title = $request -> input('title');
+            $description = $request -> input('description');
+            $video = array(
+                'id' => $video_id,
+                'room_id' => $room_id,
+                'video_content' => $video_content,
+                'title' => $title,
+                'description' => $description,
+            );
+            return view('videosedit',[
+                'video' => $video
+            ])
+                ->withErrors($validator);
+        }
+        
+        if ($validator->fails()) {
+            return back()
+                ->withInput()
+                ->withErrors($validator);
+        }
+
+        // 編集処理
+        $videos = Video::find($request->id);
+        $videos->video_content = $filename;
+        $videos->title =  $request->title;
+        $videos->description =  $request->description;
+        $videos->save(); 
+        return redirect()->action('RoomController@show')->with('message', '動画を編集しました');
     }
 
     // ルームの削除機能

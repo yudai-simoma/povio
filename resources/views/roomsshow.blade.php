@@ -28,26 +28,28 @@
             <tbody>
               <tr class="video-main">
                 <td class="user-video-name">
+                @if (Auth::id() == $room->user_id)
+                  <!-- 動画編集・削除ボタン -->
                   <li class="nav-item dropdown">
-                    <a id="navbarDropdown" class="video-nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre></a>
-
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <div class="video-dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                         <!-- 動画編集ボタン -->
-                        <a class="dropdown-item" href="{{ route('logout') }}"
-                            onclick="event.preventDefault();
-                                          document.getElementById('logout-form').submit();">
-                            {{ __('編集') }}
-                        </a>
+                        <form action="{{ url('videosedit/'.$video->id) }}" method="POST" class="video-dropdown-item">
+                          @csrf
+                          <button type="submit" class="video-btn-primary">
+                              編集
+                          </button>
+                        </form>
                         <!-- 動画削除ボタン -->
-                        <form action="{{ url('video/'.$video->id) }}" method="POST" class="dropdown-item">
+                        <form action="{{ url('video/'.$video->id) }}" method="POST" class="video-dropdown-item">
                           @csrf
                           @method('DELETE')
-                          <button type="submit" class="btn-danger">
+                          <button type="submit" class="video-btn-danger">
                               削除
                           </button>
                         </form>
                     </div>
                   </li>
+                  @endif
                   <!-- 動画 -->
                   <div id="video-detail" class="hide-area"> 
                     <iframe src="/upload/{{ $video->video_content }}" frameborder="0" class="user-video"></iframe>

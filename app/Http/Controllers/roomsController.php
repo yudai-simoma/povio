@@ -90,8 +90,23 @@ class RoomsController extends Controller{
 
         //バリデーション:エラー 
         if ($validator->fails()) {
-            return back()
-                ->withInput()
+            $room_id = $request -> input('id');
+            $user_id  = $request -> input('user_id');
+            $name = $request -> input('name');
+            $supplement = $request -> input('supplement');
+            $price = $request -> input('price');
+            $password = $request -> input('password');
+            $room = array(
+                'id' => $room_id,
+                'user_id' => $user_id,
+                'name' => $name,
+                'supplement' => $supplement,
+                'price' => $price,
+                'password' => $password,
+            );
+            return view('roomsedit',[
+                'room' => $room
+            ])
                 ->withErrors($validator);
         }
 

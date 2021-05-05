@@ -33,10 +33,10 @@ Route::get('videosnew/{rooms}','VideosController@new');
 Route::post('videos','VideosController@store');
 
 // 動画の編集画面
-Route::get('/videosedit','VideosController@edit');
+Route::post('/videosedit/{videos}','VideosController@edit');
 
-// // 動画の編集処理
-// Route::post('/videos','VideosController@store');
+// 動画の編集処理
+Route::post('/videos/update','VideosController@update');
 
 //  動画の削除 
 Route::delete('/video/{video}','VideosController@destroy');
