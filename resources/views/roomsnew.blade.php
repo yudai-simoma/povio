@@ -6,6 +6,11 @@
     <div class="col-md-8">
       <div class="card">
         <div class="card-header">{{ __('ルーム作成') }}</div>
+        
+        <!-- バリデーションエラーの表示に使用-->
+        @include('common.errors')
+        <!-- バリデーションエラーの表示に使用-->
+
           <div class="card-body">
             <form action="{{ url('rooms') }}" method="POST">
               @csrf

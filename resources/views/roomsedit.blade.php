@@ -7,6 +7,10 @@
             <div class="card">
                 <div class="card-header">{{ __('ルーム変更') }}</div>
 
+                <!-- バリデーションエラーの表示に使用-->
+                @include('common.errors')
+                <!-- バリデーションエラーの表示に使用-->
+                
                 <div class="card-body">
                     <form action="{{ url('rooms/update') }}" method="POST">
                         @csrf

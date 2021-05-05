@@ -7,6 +7,10 @@
             <div class="card">
                 <div class="card-header">{{ __('動画編集') }}</div>
 
+                <!-- バリデーションエラーの表示に使用-->
+                @include('common.errors')
+                <!-- バリデーションエラーの表示に使用-->
+                
                 <div class="card-body">
                     <form enctype="multipart/form-data" action="{{ url('videos/update') }}" method="POST">
                         @csrf
