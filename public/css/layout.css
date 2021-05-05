@@ -501,8 +501,11 @@ tbody{
     object-fit: contain;
     position: relative;
     top: 20px;
-    left: 10px;
+    left: 50px;
 }
+/* ルーム作成ページのcss終了 */
+
+/* ルーム詳細ページのcss */
 /* 動画一覧 */
 tbody{
     width: 100%;
@@ -581,21 +584,32 @@ tbody{
 .video-btn{
     width: 23vw;
 }
-
-.video-btn-primary{
-    font-size: 17pt;
-    letter-spacing: 0.5em;
-    text-align: center;
-    cursor: pointer;
-    padding: 5px 50px;
+.video-dropdown-menu{
+    min-width: 3rem;
+    background-clip: padding-box;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+.video-btn-primar{
     background: #c0c0c0;
     color: #ffffff;
-    line-height: 1em;
     transition: .3s;
     box-shadow: 3px 3px 3px #808080;
     border: none;
-    width: 23vw;
-    margin: 20px 0px 30px 0px;
+}
+.video-dropdown-item{
+    color: #ffffff;
+    line-height: 1em;
+    transition: .3s;
+    border: none;
+}
+.video-btn-primary{
+    background: #c0c0c0;
+    color: #ffffff;
+    box-shadow: 3px 3px 3px #808080;
+    border: none;
+    margin: 0px 0px 7px 0px;
 }
 .video-btn-primary:hover{
     box-shadow: none;
@@ -603,28 +617,17 @@ tbody{
     background: #808080;
 }
 .video-btn-danger{
-    font-size: 17pt;
-    letter-spacing: 0.5em;
-    text-align: center;
-    cursor: pointer;
-    padding: 5px 50px;
     background: #c0c0c0;
     color: #ffffff;
-    line-height: 1em;
-    transition: .3s;
     box-shadow: 3px 3px 3px #808080;
     border: none;
-    width: 23vw;
 }
 .video-btn-danger:hover{
     box-shadow: none;
     color: #000000;
     background: #FF0000;
 }
-
-/* ルーム作成ページのcss終了 */
-
-
+/* ルーム詳細ページのcss終了 */
 
 
 /* フラッシュメッセージのcss */
