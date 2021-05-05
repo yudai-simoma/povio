@@ -62,7 +62,7 @@ class RoomsController extends Controller{
     public function show(Request $request, $room_id) {
         $room = Room::find($room_id);
         $password = $request->password;
-        $videos = Video::orderBy('created_at', 'asc')->get();
+        $videos = Video::orderBy('created_at', 'desc')->get();
         if (Auth::id() == $room->user_id) {
             return view('roomsshow', [
                 'room' => $room,
