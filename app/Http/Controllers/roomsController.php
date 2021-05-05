@@ -59,10 +59,9 @@ class RoomsController extends Controller{
     }
 
     #ルーム詳細ページを表示
-    public function show(Request $request) {
-        $room_id = $request->room_id;
-        $password = $request->password;
+    public function show(Request $request, $room_id) {
         $room = Room::find($room_id);
+        $password = $request->password;
         $videos = Video::orderBy('created_at', 'asc')->get();
         if (Auth::id() == $room->user_id) {
             return view('roomsshow', [

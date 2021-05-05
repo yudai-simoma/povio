@@ -68,7 +68,7 @@
                         <input type="hidden" name="room_id" value="{{$video['room_id']}}">
                         <!--/ room_id値を送信 -->
                     </form>
-                    <form action="{{ url('roomsshow/'.$video->room_id) }}" method="GET" class="form-horizontal">
+                    <form action="{{ url('roomsshow/'.$video['room_id']) }}" method="GET" class="form-horizontal">
                         @csrf
                         <!-- ルーム入室ボタン -->
                         <div class="col-md-8 offset-md-4">
@@ -77,7 +77,7 @@
                             </button>
                         </div>
                         <!-- id値を送信 -->
-                        <input type="hidden" name="room_id" value="{{$video->room_id}}">
+                        <input type="hidden" name="room_id" value="{{$video['room_id']}}">
                         <!--/ id値を送信 -->
                     </form>
                 </div>

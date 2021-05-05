@@ -6,7 +6,7 @@
   <body>
     <main>
       <div class="video-header">
-        <div class="videosindex">{{ $room->name}}</div>
+        <div class="videosindex">{{ $room['name']}}</div>
         <!--  動画投稿ボタン -->
         @if (Auth::id() == $room->user_id)
         <form action="{{ url('videosnew/'.$room->id) }}" method="GET" class="video-float3">

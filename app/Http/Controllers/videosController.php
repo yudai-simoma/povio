@@ -96,10 +96,13 @@ class VideosController extends Controller{
                 ->withErrors($validator);
         }
         
-        if ($validator->fails()) {
-            return back()
-                ->withInput()
-                ->withErrors($validator);
+        // 動画の編集処理
+        $file = $request->file('video_content'); //file取得
+        if( !empty($file) ){                //fileが空かチェック
+              $filename = $file->getClientOriginalName();   //ファイル名を取得
+              $move = $file->move('../upload/',$filename);  //ファイルを移動
+        }else{
+              $filename = "";
         }
 
         // 編集処理
@@ -108,7 +111,10 @@ class VideosController extends Controller{
         $videos->title =  $request->title;
         $videos->description =  $request->description;
         $videos->save(); 
-        return redirect()->action('RoomController@show')->with('message', '動画を編集しました');
+        return redirect(route('room.show', [
+            'rooms' => $request->room_id,
+        ]))->with('message', '動画投稿が完了しました');
+        // return redirect()->action('RoomsController@show')->with('message', '動画を編集しました');
     }
 
     // ルームの削除機能
