@@ -59,13 +59,30 @@ class RoomsController extends Controller{
     }
 
     #ルーム詳細ページを表示
-    public function show($room_id) {
-        $rooms = Room::find($room_id);
+    public function show(Request $request) {
+        $room_id = $request->room_id;
+        $password = $request->password;
+        $room = Room::find($room_id);
         $videos = Video::orderBy('created_at', 'asc')->get();
-        return view('roomsshow', [
-            'room' => $rooms,
-            'videos' => $videos
-        ]);
+        if (Auth::id() == $room->user_id) {
+            return view('roomsshow', [
+                'room' => $room,
+                'videos' => $videos
+            ]);
+        }else{
+            if ($request->password != null){
+                if ($password == $room->password){
+                    return view('roomsshow', [
+                    'room' => $room,
+                    'videos' => $videos
+                ]);
+                }else{
+                    return redirect('/')->with('message', 'パスワードが違います');
+                }
+            }else{
+                return redirect('/')->with('message', 'パスワードが違います');
+            }
+        }
     }
 
     #ルーム編集ページを表示

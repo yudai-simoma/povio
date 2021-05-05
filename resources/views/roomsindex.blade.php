@@ -83,6 +83,9 @@
                         <button type="submit" class="btn-enter">
                           入室
                         </button>
+                        <!-- id値を送信 -->
+                        <input type="hidden" name="room_id" value="{{$room->id}}">
+                        <!--/ id値を送信 -->
                       </form>
                     @else
                       <!-- ルーム入室 -->
@@ -94,6 +97,9 @@
                         <button type="submit" class="btn-enter">
                           入室
                         </button>
+                        <!-- id値を送信 -->
+                        <input type="hidden" name="room_id" value="{{$room->id}}">
+                        <!--/ id値を送信 -->
                       </form>
                     @endif
                   @else
