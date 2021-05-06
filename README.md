@@ -91,31 +91,26 @@ Visual Studio Code
 
 ## users テーブル
 
-| Column             | Type   | Options     |
-| ------------------ | ------ | ----------- |
-| email              | string | null: false, unique: true |
-| encrypted_password | string | null: false |
-| nickname           | string | null: false |
-| last_name          | string | null: false |
-| first_name         | string | null: false |
-| last_name_kana     | string | null: false |
-| first_name_kana    | string | null: false |
+| Column   | Type   | Options                   |
+| -------- | ------ | ------------------------- |
+| name     | string | null: false               |
+| email    | string | null: false, unique: true |
+| password | string | null: false               |
 
 ### Association
 
 - has_many :rooms
-- has_many :videos
 - has_many :purchasers
 - has_many :comments
 
 ## rooms テーブル
 
-| Column       | Type       | Options     |
-| ------------ | ---------- | ----------- |
-| name         | string     | null: false |
-| price        | integer    | null: false |
-| password     | string     | null: false |
-| supplement   | string     | null: false |
+| Column       | Type       | Options                        |
+| ------------ | ---------- | ------------------------------ |
+| name         | string     | null: false                    |
+| price        | integer    | null: false                    |
+| password     | string     | null: false                    |
+| supplement   | string     | null: false                    |
 | user         | references | null: false, foreign_key: true |
 
 ### Association
@@ -128,7 +123,7 @@ Visual Studio Code
 
 | Column        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
-| video_content |            | null: false                    |
+| video_content | string     | null: false                    |
 | title         | string     | null: false                    |
 | description   | string     | null: false                    |
 | room          | references | null: false, foreign_key: true |
@@ -136,7 +131,6 @@ Visual Studio Code
 
 ### Association
 
-- belongs_to :user
 - belongs_to :room
 - has_many :comments
 
