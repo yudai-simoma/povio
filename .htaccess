@@ -18,5 +18,7 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ server.php
 
+    AddType video/mp4 .mp4
+    AddType video/webm .webm
 
 </IfModule>

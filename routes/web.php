@@ -7,42 +7,42 @@ use Illuminate\Http\Request;
 Route::get('/','roomsController@index');
 
 // ルームの追加画面
-Route::get('/roomsnew','RoomsController@new');
+Route::get('/roomsnew','roomsController@new');
 
 // ルームの追加処理
-Route::post('rooms','RoomsController@create');
+Route::post('rooms','roomsController@create');
 
 // ルームの詳細画面
-Route::get('/roomsshow/{rooms}','RoomsController@show')->name('room.show');
+Route::get('/roomsshow/{rooms}','roomsController@show')->name('room.show');
 
 // ルームの編集画面
-Route::post('/roomsedit/{rooms}','RoomsController@edit');
+Route::post('/roomsedit/{rooms}','roomsController@edit');
 
 // ルームの編集処理
-Route::post('/rooms/update','RoomsController@update');
+Route::post('/rooms/update','roomsController@update');
 
 // //  ルームを削除 
-Route::delete('/room/{room}','RoomsController@destroy');
+Route::delete('/room/{room}','roomsController@destroy');
 
 
 
 // 動画の投稿ページ
-Route::get('videosnew/{rooms}','VideosController@new');
+Route::get('videosnew/{rooms}','videosController@new');
 
 // 動画の追加処理
-Route::post('videos','VideosController@store');
+Route::post('videos','videosController@store');
 
 // 動画の編集画面
-Route::post('/videosedit/{videos}','VideosController@edit');
+Route::post('/videosedit/{videos}','videosController@edit');
 
 // 動画の編集処理
-Route::post('/videos/update','VideosController@update');
+Route::post('/videos/update','videosController@update');
 
 //  動画の削除 
-Route::delete('/video/{video}','VideosController@destroy');
+Route::delete('/video/{video}','videosController@destroy');
 
 
 // ユーザー登録で記述
 Auth::routes();
-Route::get('/home', 'RoomsController@index')->name('home');
+Route::get('/home', 'roomsController@index')->name('home');
 
