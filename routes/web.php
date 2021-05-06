@@ -4,7 +4,7 @@ use Illuminate\Http\Request;
 
 
 // ルームの一覧表示(rooms.blade.php)
-Route::get('/','RoomsController@index');
+Route::get('/','roomsController@index');
 
 // ルームの追加画面
 Route::get('/roomsnew','RoomsController@new');
