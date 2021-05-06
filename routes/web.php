@@ -1,6 +1,6 @@
 <?php
 use App\Models\Room;
-use Illuminate\Http\Request;
+use Illuminate\Https\Request;
 
 
 // ルームの一覧表示(rooms.blade.php)
