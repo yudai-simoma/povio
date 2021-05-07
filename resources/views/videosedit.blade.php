@@ -77,7 +77,7 @@
                         <!-- ルーム入室ボタン -->
                         <div class="col-md-8 offset-md-4">
                             <button type="submit" class="btn video-btn-cancel">
-                            キャンセル
+                            戻る
                             </button>
                         </div>
                         <!-- id値を送信 -->
