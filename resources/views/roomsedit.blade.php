@@ -84,6 +84,7 @@
                         <!--/ id値を送信 -->
 
                     </form>
+                    <a href="roomsnew" class="float3"><span class="btn btn-primary">戻る</span></a>
                 </div>
             </div>
         </div>
