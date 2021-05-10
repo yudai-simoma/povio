@@ -21,7 +21,7 @@
     
       <div id="video-detail" class="hide-area"> <!--==hide video==-->
         <video poster="img/movie.jpg" webkit-playsinline playsinline controls autoplay muted loop class="video">
-          <source src="public/video/ダンスvideo.mp4" type="video/mp4">
+          <source src="public/video/video.mp4" type="video/mp4">
         </video>
         <p class="video-text">Music ManPV ※音は再生しません</p>
       </div>
