@@ -19,6 +19,7 @@ class CreateRoomsTable extends Migration
             $table->string('name');
             $table->string('supplement');
             $table->integer('price');
+            $table->integer('number');
             $table->string('password');
             $table->timestamps();
         });
