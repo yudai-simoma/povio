@@ -50,7 +50,8 @@
               <!-- ルーム金額 -->
               <tr class="room-money">
                 <td>
-                    <div class="room-price">月額<br>{{ $room->price }}<br>円</div>
+                    <div class="room-price">金額<br>{{ $room->price }}円</div>
+                    <div class="room-price">動画本数<br>全{{ $room->number }}本</div>
                     <!-- <div class="room-price"><br>{{ "ユーザー名" }}<br></div> -->
                 </td>
               </tr>
