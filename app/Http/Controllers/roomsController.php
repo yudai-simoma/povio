@@ -37,6 +37,7 @@ class RoomsController extends Controller{
             'name' => 'required | min:1 | max:50',
             'supplement' => 'required | min:1 | max:1000',
             'price' => 'required | max:6 | integer',
+            'number' => 'required | min:1 | integer',
             'password' => 'required | regex:/^(?=.*?[a-z])(?=.*?\d)[a-z\d]+$/i | min:6 | max:30',
         ]);
 
@@ -53,6 +54,7 @@ class RoomsController extends Controller{
         $rooms->name =    $request->name;
         $rooms->supplement =  $request->supplement;
         $rooms->price =  $request->price;
+        $rooms->number = $request->number;
         $rooms->password =    $request->password;
         $rooms->save(); 
         return redirect('/')->with('message', 'ルームを作成しました');
@@ -101,6 +103,7 @@ class RoomsController extends Controller{
             'name' => 'required | min:1 | max:50',
             'supplement' => 'required | min:1 | max:1000',
             'price' => 'required | max:6 | integer',
+            'number' => 'required | min:1 | integer',
             'password' => 'required | regex:/^(?=.*?[a-z])(?=.*?\d)[a-z\d]+$/i | min:6 | max:30',
         ]);
 
@@ -111,6 +114,7 @@ class RoomsController extends Controller{
             $name = $request -> input('name');
             $supplement = $request -> input('supplement');
             $price = $request -> input('price');
+            $number = $request->number('number');
             $password = $request -> input('password');
             $room = array(
                 'id' => $room_id,
@@ -118,6 +122,7 @@ class RoomsController extends Controller{
                 'name' => $name,
                 'supplement' => $supplement,
                 'price' => $price,
+                'number' => $number,
                 'password' => $password,
             );
             return view('roomsedit',[
@@ -131,6 +136,7 @@ class RoomsController extends Controller{
         $rooms->name = $request->name;
         $rooms->supplement = $request->supplement;
         $rooms->price = $request->price;
+        $rooms->number = $request->number;
         $rooms->password = $request->password;
         $rooms->save(); 
         return redirect('/')->with('message', 'ルームを編集しました');
