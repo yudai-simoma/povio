@@ -44,7 +44,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="price" class="col-md-4 col-form-label text-md-right">{{ __('毎月の金額') }}</label>
+                            <label for="price" class="col-md-4 col-form-label text-md-right">{{ __('ルームの金額') }}</label>
 
                             <div class="col-md-6">
                                 <input id="price" type="text" class="form-control @error('price') is-invalid @enderror" name="price" value="{{ $room['price'] }}" required autocomplete="price" autofocus>
@@ -87,18 +87,19 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn room-btn-primary">
                                     {{ __('編集') }}
                                 </button>
                             </div>
                         </div>
+
+                        <a href="/povio" class="float3"><span class="btn home-btn-primary">戻る</span></a>
 
                         <!-- id値を送信 -->
                         <input type="hidden" name="id" value="{{ $room['id'] }">
                         <!--/ id値を送信 -->
 
                     </form>
-                    <a href="roomsnew" class="float3"><span class="btn btn-primary">戻る</span></a>
                 </div>
             </div>
         </div>
