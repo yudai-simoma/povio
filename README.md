@@ -17,7 +17,7 @@
 #### `2 トップページに作成されているルームが表示`
 #### `3 ルーム作成はルーム一覧の右側にある「ルーム作成」ボタンを選択`
 #### `4 ルーム作成後はトップページへ戻る`<br>
-[![Image from Gyazo](https://i.gyazo.com/a16a3190d25e4bc98fd522e9134d87d1.gif)](https://gyazo.com/a16a3190d25e4bc98fd522e9134d87d1)
+[![Image from Gyazo](https://i.gyazo.com/be5390ba767ed87b23be0c6ae2d72589.gif)](https://gyazo.com/be5390ba767ed87b23be0c6ae2d72589)
 [![Image from Gyazo](https://i.gyazo.com/4936c6cf1c25acdb1fb83fd0b4651f9c.gif)](https://gyazo.com/4936c6cf1c25acdb1fb83fd0b4651f9c)
   <br>
 
@@ -38,6 +38,7 @@
 
  #### `9 ルーム詳細画面から投稿された動画を視聴できる`<br>
   [![Image from Gyazo](https://i.gyazo.com/5fc174e156a76a39776cd9e6a29641b2.gif)](https://gyazo.com/5fc174e156a76a39776cd9e6a29641b2)
+<br>
 
 # ✅ 課題解決
 | ユーザーストーリーから考える課題                                                          | 課題解決                                         |
