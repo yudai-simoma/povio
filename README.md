@@ -37,7 +37,7 @@
  <br>
 
  #### `9 ルーム詳細画面から投稿された動画を視聴できる`<br>
-  [![Image from Gyazo](https://i.gyazo.com/5fc174e156a76a39776cd9e6a29641b2.gif)](https://gyazo.com/5fc174e156a76a39776cd9e6a29641b2)
+  [![Image from Gyazo](https://i.gyazo.com/025560339550cdaeb56ffe688b7cf578.gif)](https://gyazo.com/025560339550cdaeb56ffe688b7cf578)
 <br>
 
 # ✅ 課題解決
