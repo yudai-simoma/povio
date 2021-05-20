@@ -116,7 +116,7 @@
     </main>   
       
     <!--自作のJS-->
-    <script src="{{ asset('js/script.js') }}" defer></script>
+    <script src="public/js/script.js" defer></script>
   </body>
 </html>
 
