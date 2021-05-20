@@ -21,7 +21,7 @@
     
       <div id="video-detail" class="hide-area"> <!--==hide video==-->
         <video webkit-playsinline playsinline controls autoplay muted loop class="video">
-          <source src="public/video/video.mp4" type="video/mp4">
+          <source src="chmod 664 public/video/video.mp4" type="video/mp4">
         </video>
         <p class="video-text">Music ManPV ※音は再生しません</p>
       </div>
@@ -116,7 +116,7 @@
     </main>   
       
     <!--自作のJS-->
-    <script src="public/js/script.js" defer></script>
+    <script src="{{ asset('js/script.js') }}" defer></script>
   </body>
 </html>
 
