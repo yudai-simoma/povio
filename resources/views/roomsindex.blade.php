@@ -115,9 +115,6 @@
       <div id="page-top"><a href="#header"></a></div>
     </main>   
       
-    <!--=============JS ===============--> 
-    <!--jQuery-->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <!--自作のJS-->
     <script src="{{ asset('js/script.js') }}" defer></script>
   </body>
