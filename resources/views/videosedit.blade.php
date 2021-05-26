@@ -74,7 +74,7 @@
                     </form>
                     <form action="{{ url('roomsshow/'.$video['room_id']) }}" method="GET" class="form-horizontal">
                         @csrf
-                        <!-- ルーム入室ボタン -->
+                        <!-- ルームに戻るボタン -->
                         <div class="col-md-8 offset-md-4">
                             <button type="submit" class="btn video-btn-cancel">
                             戻る

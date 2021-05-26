@@ -69,6 +69,18 @@
                         <input type="hidden" name="room_id" value="{{$room->id}}">
                         <!--/ id値を送信 -->
                     </form>
+                    <form action="{{ url('roomsshow/'.$room['id']) }}" method="GET" class="form-horizontal">
+                        @csrf
+                        <!-- ルームに戻るボタン -->
+                        <div class="col-md-8 offset-md-4">
+                            <button type="submit" class="btn video-btn-cancel">
+                            戻る
+                            </button>
+                        </div>
+                        <!-- id値を送信 -->
+                        <input type="hidden" name="room_id" value="{{$room['id']}}">
+                        <!--/ id値を送信 -->
+                    </form>
                 </div>
             </div>
         </div>
